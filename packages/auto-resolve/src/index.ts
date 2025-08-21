@@ -138,6 +138,16 @@ export async function autoResolve(options: AutoResolveOptions = {}): Promise<voi
 
 // Auto-initialize when imported in browser
 if (typeof window !== 'undefined') {
+  // Disclaimer warning
+  console.warn(
+    '⚠️ ENS Rush Resolution Disclaimer:\n' +
+    '• This is NOT an official ENS Labs or ENS DAO project\n' +
+    '• Name/address resolution might be incorrect or outdated\n' +
+    '• No guaranteed uptime or service reliability\n' +
+    '• Use at your own risk for non-critical applications\n' +
+    '• Learn more about official ENS resolution: https://docs.ens.domains/resolution'
+  );
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       console.log('Auto-resolve: DOM loaded, starting auto-resolution...');

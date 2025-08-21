@@ -160,6 +160,18 @@ This project follows the "less is more" philosophy. We ship minimal, working sol
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+## ⚠️ Disclaimer
+
+**This is NOT an official ENS Labs or ENS DAO project.**
+
+- Name/address resolution might be incorrect or outdated
+- No guaranteed uptime or service reliability  
+- Use at your own risk for non-critical applications
+- This service trades security for speed and convenience
+- For production applications requiring cryptographic verification, use official ENS resolution methods
+
+**Learn more about official ENS resolution**: https://docs.ens.domains/resolution
+
 ## License
 
 MIT
