@@ -11,7 +11,10 @@
       "Bash(bun run:*)",
       "Bash(bun:*)",
       "Bash(mkdir:*)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(cp:*)"
     ],
     "deny": [],
     "ask": []
