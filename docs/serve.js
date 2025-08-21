@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 
 const server = Bun.serve({
-  port: 3001,
+  port: 3000,
   async fetch(req) {
     const url = new URL(req.url);
     let filePath = url.pathname;
@@ -11,10 +11,10 @@ const server = Bun.serve({
       filePath = '/index.html';
     }
     
-    // Serve from examples/landing-page or go up to packages
+    // Serve from docs or go up to packages
     let fullPath;
     if (filePath.startsWith('/packages/')) {
-      fullPath = `../../${filePath}`;
+      fullPath = `..${filePath}`;  // Go up one directory to access packages
     } else {
       fullPath = `.${filePath}`;
     }
@@ -27,6 +27,8 @@ const server = Bun.serve({
       if (filePath.endsWith('.html')) contentType = 'text/html';
       else if (filePath.endsWith('.js')) contentType = 'application/javascript';
       else if (filePath.endsWith('.css')) contentType = 'text/css';
+      else if (filePath.endsWith('.png')) contentType = 'image/png';
+      else if (filePath.endsWith('.jpg') || filePath.endsWith('.jpeg')) contentType = 'image/jpeg';
       
       return new Response(file, {
         headers: {
@@ -40,5 +42,5 @@ const server = Bun.serve({
   }
 });
 
-console.log(`Landing page server running at http://localhost:${server.port}`);
-console.log('Open: http://localhost:3001');
+console.log(`Docs server running at http://localhost:${server.port}`);
+console.log('Open: http://localhost:3000');
