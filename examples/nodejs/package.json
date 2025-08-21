@@ -1,0 +1,14 @@
+{
+  "name": "nodejs-example",
+  "version": "0.1.0",
+  "description": "Node.js example using Rush Resolution core",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun run index.js",
+    "dev": "bun run --watch index.js"
+  },
+  "dependencies": {
+    "@ens-rush-resolution/core": "workspace:*"
+  }
+}

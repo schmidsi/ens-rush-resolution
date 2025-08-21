@@ -5,6 +5,21 @@
       "name": "ens-rush-resolution-service",
       "devDependencies": {
         "@types/bun": "latest",
+        "typescript": "^5",
+      },
+    },
+    "examples/nodejs": {
+      "name": "nodejs-example",
+      "version": "0.1.0",
+      "dependencies": {
+        "@ens-rush-resolution/core": "workspace:*",
+      },
+    },
+    "packages/core": {
+      "name": "@ens-rush-resolution/core",
+      "version": "0.1.0",
+      "devDependencies": {
+        "@types/bun": "latest",
         "tsup": "^8.5.0",
       },
       "peerDependencies": {
@@ -13,6 +28,8 @@
     },
   },
   "packages": {
+    "@ens-rush-resolution/core": ["@ens-rush-resolution/core@workspace:packages/core"],
+
     "@esbuild/aix-ppc64": ["@esbuild/aix-ppc64@0.25.9", "", { "os": "aix", "cpu": "ppc64" }, "sha512-OaGtL73Jck6pBKjNIe24BnFE6agGl+6KxDtTfHhy1HmhthfKouEcOhqpSL64K4/0WCtbKFLOdzD/44cJ4k9opA=="],
 
     "@esbuild/android-arm": ["@esbuild/android-arm@0.25.9", "", { "os": "android", "cpu": "arm" }, "sha512-5WNI1DaMtxQ7t7B6xa572XMXpHAaI/9Hnhk8lcxF4zVN4xstUgTlvuGDorBguKEnZO70qwEcLpfifMLoxiPqHQ=="],
@@ -206,6 +223,8 @@
     "ms": ["ms@2.1.3", "", {}, "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA=="],
 
     "mz": ["mz@2.7.0", "", { "dependencies": { "any-promise": "^1.0.0", "object-assign": "^4.0.1", "thenify-all": "^1.0.0" } }, "sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q=="],
+
+    "nodejs-example": ["nodejs-example@workspace:examples/nodejs"],
 
     "object-assign": ["object-assign@4.1.1", "", {}, "sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg=="],
 

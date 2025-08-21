@@ -8,7 +8,10 @@
       "Bash(mkdir:*)",
       "Bash(rm:*)",
       "Bash(bun add:*)",
-      "Bash(bun run:*)"
+      "Bash(bun run:*)",
+      "Bash(bun:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)"
     ],
     "deny": [],
     "ask": []

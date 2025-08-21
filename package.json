@@ -2,24 +2,19 @@
   "name": "ens-rush-resolution-service",
   "version": "0.1.0",
   "description": "A rapid ENS resolution service that trades security for speed",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
   "type": "module",
   "private": true,
-  "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "test": "bun test"
-  },
-  "files": [
-    "dist"
+  "workspaces": [
+    "packages/*",
+    "examples/*"
   ],
+  "scripts": {
+    "build": "bun run --filter='@ens-rush-resolution/*' build",
+    "test": "bun run --filter='@ens-rush-resolution/*' test",
+    "dev": "bun run --filter='@ens-rush-resolution/*' dev"
+  },
   "devDependencies": {
     "@types/bun": "latest",
-    "tsup": "^8.5.0"
-  },
-  "peerDependencies": {
     "typescript": "^5"
   }
 }
