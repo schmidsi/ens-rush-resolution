@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENS Rush Resolution - Rapid ENS Name Resolution</title>
+    <meta name="description" content="Automatically resolve Ethereum addresses to ENS names on your website with a single script tag.">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- ENS Rush Resolution Auto-Resolve -->
+    <script src="../../packages/auto-resolve/dist/index.global.js"></script>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <h1>ENS Rush Resolution</h1>
+            <p class="tagline">Rapid ENS name resolution that trades security for speed</p>
+            <p class="subtitle">Automatically convert Ethereum addresses to ENS names with a single script tag</p>
+            
+            <div class="quick-start">
+                <h3>Quick Start</h3>
+                <code>&lt;script src="https://unpkg.com/@ens-rush-resolution/auto-resolve/dist/index.global.js"&gt;&lt;/script&gt;</code>
+                <p>That's it! All Ethereum addresses on your page will be automatically resolved.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="demo">
+        <div class="container">
+            <h2>Live Demo</h2>
+            <p>The addresses below are automatically resolved using ENS Rush Resolution:</p>
+            
+            <div class="demo-content">
+                <div class="address-examples">
+                    <h3>Real ENS Names</h3>
+                    <ul>
+                        <li>Vitalik Buterin: <span class="address">0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045</span></li>
+                        <li>Nick Johnson: <span class="address">0xb8c2C29ee19D8307cb7255e1Cd9CbDE883A267d5</span></li>
+                    </ul>
+                </div>
+                
+                <div class="address-examples">
+                    <h3>No ENS Names</h3>
+                    <ul>
+                        <li>Random address: <span class="address">0x1234567890123456789012345678901234567890</span></li>
+                        <li>Another random: <span class="address">0x8888888888888888888888888888888888888888</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p class="demo-note">
+                <strong>Watch the magic happen!</strong> The addresses above will be replaced with ENS names when available. 
+                Hover over resolved names to see the original address.
+            </p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h3>🚀 Zero Configuration</h3>
+                    <p>Just add one script tag and it works automatically. No setup, no configuration needed.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>⚡ Fast & Efficient</h3>
+                    <p>Batches multiple addresses in a single API call for optimal performance.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>🎨 Style Friendly</h3>
+                    <p>No inline styles applied - respects your website's existing design.</p>
+                </div>
+                
+                <div class="feature">
+                    <h3>📱 Universal Compatibility</h3>
+                    <p>Works in all modern browsers, static sites, and dynamic applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="usage">
+        <div class="container">
+            <h2>Usage Examples</h2>
+            
+            <div class="code-example">
+                <h3>Basic Usage</h3>
+                <pre><code>&lt;!-- Add to your HTML head --&gt;
+&lt;script src="https://unpkg.com/@ens-rush-resolution/auto-resolve/dist/index.global.js"&gt;&lt;/script&gt;
+
+&lt;!-- Addresses in your content will be auto-resolved --&gt;
+&lt;p&gt;Contact developer: 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045&lt;/p&gt;</code></pre>
+            </div>
+            
+            <div class="code-example">
+                <h3>Programmatic Usage</h3>
+                <pre><code>import { resolve } from '@ens-rush-resolution/core';
+
+const results = await resolve([
+  '0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045'
+]);
+
+console.log(results[0].name); // "vitalik.eth"</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy">
+        <div class="container">
+            <h2>The "Rush" Philosophy</h2>
+            <p>
+                ENS Rush Resolution intentionally trades security for speed and simplicity. 
+                It's perfect for static sites, blogs, and dashboards where cryptographic verification isn't critical, 
+                but user experience is paramount.
+            </p>
+            
+            <div class="comparison">
+                <div class="approach">
+                    <h3>Traditional ENS Resolution</h3>
+                    <ul>
+                        <li>Direct blockchain queries</li>
+                        <li>Cryptographically verified</li>
+                        <li>Requires web3 provider</li>
+                        <li>Complex setup</li>
+                        <li>Slower performance</li>
+                    </ul>
+                </div>
+                
+                <div class="approach">
+                    <h3>Rush Resolution</h3>
+                    <ul>
+                        <li>Cached API responses</li>
+                        <li>Trust-based resolution</li>
+                        <li>No web3 required</li>
+                        <li>One script tag</li>
+                        <li>Instant results</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>
+                Built with ❤️ by the Ethereum community. 
+                <a href="https://github.com/yourusername/ens-rush-resolution-service">View on GitHub</a>
+            </p>
+            <p>
+                Powered by <a href="https://github.com/gskril/ens-api">Greg Skril's ENS API</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
