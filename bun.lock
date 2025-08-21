@@ -15,6 +15,20 @@
         "@ens-rush-resolution/core": "workspace:*",
       },
     },
+    "packages/auto-resolve": {
+      "name": "@ens-rush-resolution/auto-resolve",
+      "version": "0.1.0",
+      "dependencies": {
+        "@ens-rush-resolution/core": "workspace:*",
+      },
+      "devDependencies": {
+        "@types/bun": "latest",
+        "tsup": "^8.5.0",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
+      },
+    },
     "packages/core": {
       "name": "@ens-rush-resolution/core",
       "version": "0.1.0",
@@ -28,6 +42,8 @@
     },
   },
   "packages": {
+    "@ens-rush-resolution/auto-resolve": ["@ens-rush-resolution/auto-resolve@workspace:packages/auto-resolve"],
+
     "@ens-rush-resolution/core": ["@ens-rush-resolution/core@workspace:packages/core"],
 
     "@esbuild/aix-ppc64": ["@esbuild/aix-ppc64@0.25.9", "", { "os": "aix", "cpu": "ppc64" }, "sha512-OaGtL73Jck6pBKjNIe24BnFE6agGl+6KxDtTfHhy1HmhthfKouEcOhqpSL64K4/0WCtbKFLOdzD/44cJ4k9opA=="],

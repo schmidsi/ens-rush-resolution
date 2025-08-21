@@ -1,0 +1,11 @@
+{
+  "name": "vanilla-html-example",
+  "version": "0.1.0",
+  "description": "Vanilla HTML example for ENS Rush Resolution",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "serve": "bun serve.js",
+    "start": "bun serve.js"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@ens-rush-resolution/auto-resolve",
+  "version": "0.1.0",
+  "description": "Auto-detection and resolution of Ethereum addresses in web pages",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "bun test"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@ens-rush-resolution/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "tsup": "^8.5.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
