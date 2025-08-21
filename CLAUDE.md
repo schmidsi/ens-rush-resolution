@@ -16,6 +16,7 @@ A simple `<script>` tag that automatically finds all Ethereum addresses on a pag
 - ✅ Comprehensive test suite with real ENS names
 - ✅ Proper TypeScript types and error handling
 - ✅ Multiple build formats (ESM, CJS)
+- ✅ **Published to NPM v0.1.1**
 
 ### ✅ Phase 2: Auto-Detection Script - COMPLETED  
 - ✅ `@ens-rush-resolution/auto-resolve` package created
@@ -25,6 +26,8 @@ A simple `<script>` tag that automatically finds all Ethereum addresses on a pag
 - ✅ Clean DOM replacement with hover tooltips
 - ✅ No inline styling - respects website design
 - ✅ Tree walker for comprehensive address detection
+- ✅ **Exclusion feature**: `data-ens-rush="false"` attribute to skip sections
+- ✅ **Published to NPM v0.1.1**
 
 ### ✅ Examples & Documentation - COMPLETED
 - ✅ Node.js programmatic example
@@ -32,6 +35,7 @@ A simple `<script>` tag that automatically finds all Ethereum addresses on a pag
 - ✅ Professional landing page with live demo
 - ✅ Comprehensive README documentation
 - ✅ GitHub Pages deployment at https://schmidsi.github.io/ens-rush-resolution/
+- ✅ **NPM CDN integration**: Uses unpkg.com/@ens-rush-resolution/auto-resolve@0.1.1
 
 ### 🔄 Phase 3: MutationObserver - TODO
 - Watch for dynamically added content
@@ -94,8 +98,50 @@ ens-rush-resolution/
 4. **Production ready**: Tests, builds, proper error handling
 5. **Live demonstration**: Working public demo site
 
+## NPM Packages ✅ PUBLISHED
+- **@ens-rush-resolution/core@0.1.1** - Core resolution logic
+- **@ens-rush-resolution/auto-resolve@0.1.1** - Auto-detection + DOM replacement
+- **Installation**: `npm install @ens-rush-resolution/core` or `npm install @ens-rush-resolution/auto-resolve`
+- **CDN**: `https://unpkg.com/@ens-rush-resolution/auto-resolve@0.1.1/dist/index.global.js`
+
+## Recent Additions ✅
+### Exclusion Feature
+- **Problem**: Addresses in code examples were being auto-resolved
+- **Solution**: `data-ens-rush="false"` attribute on parent elements
+- **Usage**: `<div data-ens-rush="false">0x1234...</div>` or `<pre data-ens-rush="false">`
+- **Implementation**: NodeFilter in TreeWalker checks parent chain for exclusion
+- **Also supports**: `data-ens-rush="skip"` as alias
+
+## API Design Notes
+### Core Package (`@ens-rush-resolution/core`)
+```typescript
+export interface AddressResolution {
+  address: string;
+  name: string | null;
+}
+
+export interface ResolveOptions {
+  apiEndpoint?: string; // Default: 'https://ens-api.gregskril.com'
+}
+
+export async function resolve(
+  addresses: string[],
+  options: ResolveOptions = {}
+): Promise<AddressResolution[]>
+```
+
+### Auto-Resolve Package (`@ens-rush-resolution/auto-resolve`)
+```typescript
+export interface AutoResolveOptions extends ResolveOptions {
+  selector?: string; // Limit to specific element
+  onResolve?: (address: string, name: string | null, element: Element) => void;
+}
+
+export async function autoResolve(options: AutoResolveOptions = {}): Promise<void>
+```
+
 ## Next Immediate Steps
-1. Publish packages to NPM
+1. ✅ ~~Publish packages to NPM~~ - COMPLETED v0.1.1
 2. Add MutationObserver support (Phase 3)
 3. Create React integration package
 4. Add more framework integrations
