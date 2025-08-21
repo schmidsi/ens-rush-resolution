@@ -7,6 +7,10 @@ export interface ResolveOptions {
   apiEndpoint?: string;
 }
 
+interface BatchAddressesResponse {
+  [address: string]: string | undefined;
+}
+
 const DEFAULT_API_ENDPOINT = 'https://ens-api.gregskril.com';
 
 export async function resolve(
@@ -32,7 +36,7 @@ export async function resolve(
       throw new Error(`API request failed: ${response.status}`);
     }
 
-    const data = await response.json() as Record<string, string>;
+    const data = await response.json() as BatchAddressesResponse;
     
     return addresses.map(address => ({
       address,
