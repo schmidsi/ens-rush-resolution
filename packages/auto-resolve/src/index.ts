@@ -39,7 +39,19 @@ function findAllAddresses(root: Element = document.body): AddressElement[] {
   const walker = document.createTreeWalker(
     root,
     NodeFilter.SHOW_TEXT,
-    null
+    {
+      acceptNode(node: Text) {
+        // Skip nodes inside elements with data-ens-rush="false"
+        let parent = node.parentElement;
+        while (parent) {
+          if (parent.dataset.ensRush === 'false' || parent.dataset.ensRush === 'skip') {
+            return NodeFilter.FILTER_REJECT;
+          }
+          parent = parent.parentElement;
+        }
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    }
   );
 
   const allAddresses: AddressElement[] = [];

@@ -9,6 +9,8 @@
     
     <!-- ENS Rush Resolution Auto-Resolve -->
     <script src="https://unpkg.com/@ens-rush-resolution/auto-resolve@0.1.0/dist/index.global.js"></script>
+    <!-- For local development, comment out the line above and uncomment below: -->
+    <!-- <script src="../packages/auto-resolve/dist/index.global.js"></script> -->
 </head>
 <body>
     <header class="hero">
@@ -88,7 +90,7 @@
         <div class="container">
             <h2>Usage Examples</h2>
             
-            <div class="code-example">
+            <div class="code-example" data-ens-rush="false">
                 <h3>Basic Usage</h3>
                 <pre><code>&lt;!-- Add to your HTML head --&gt;
 &lt;script src="https://unpkg.com/@ens-rush-resolution/auto-resolve/dist/index.global.js"&gt;&lt;/script&gt;
@@ -97,7 +99,7 @@
 &lt;p&gt;Contact developer: 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045&lt;/p&gt;</code></pre>
             </div>
             
-            <div class="code-example">
+            <div class="code-example" data-ens-rush="false">
                 <h3>Programmatic Usage</h3>
                 <pre><code>import { resolve } from '@ens-rush-resolution/core';
 
@@ -106,6 +108,19 @@ const results = await resolve([
 ]);
 
 console.log(results[0].name); // "vitalik.eth"</code></pre>
+            </div>
+            
+            <div class="code-example" data-ens-rush="false">
+                <h3>Exclude Sections from Resolution</h3>
+                <pre><code>&lt;!-- Prevent auto-resolution in specific sections --&gt;
+&lt;div data-ens-rush="false"&gt;
+  &lt;p&gt;This address won't be resolved: 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Perfect for code examples and documentation --&gt;
+&lt;pre data-ens-rush="false"&gt;
+  &lt;code&gt;Contact: 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045&lt;/code&gt;
+&lt;/pre&gt;</code></pre>
             </div>
         </div>
     </section>

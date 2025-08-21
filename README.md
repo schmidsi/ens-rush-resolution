@@ -88,6 +88,28 @@ autoResolve({
 });
 ```
 
+### Excluding Sections from Resolution
+
+Use the `data-ens-rush="false"` attribute to prevent auto-resolution in specific sections:
+
+```html
+<!-- Skip resolution in code examples -->
+<pre data-ens-rush="false">
+  <code>Contact: 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045</code>
+</pre>
+
+<!-- Skip entire sections -->
+<div data-ens-rush="false">
+  <p>This address won't be resolved: 0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045</p>
+  <span>Neither will this: 0xb8c2C29ee19D8307cb7255e1Cd9CbDE883A267d5</span>
+</div>
+```
+
+This is perfect for:
+- Code examples and documentation
+- Technical specifications
+- Any content where original addresses should be preserved
+
 ## API Reference
 
 ### Core Package
