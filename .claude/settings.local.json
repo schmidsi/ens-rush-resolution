@@ -14,7 +14,9 @@
       "Bash(mv:*)",
       "Bash(git branch:*)",
       "Bash(git push:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "Bash(bun run:*)",
+      "Bash(npm:*)"
     ],
     "deny": [],
     "ask": []
