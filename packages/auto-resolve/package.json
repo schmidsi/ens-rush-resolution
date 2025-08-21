@@ -2,10 +2,19 @@
   "name": "@ens-rush-resolution/auto-resolve",
   "version": "0.1.0",
   "description": "Auto-detection and resolution of Ethereum addresses in web pages",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "unpkg": "dist/index.global.js",
+  "jsdelivr": "dist/index.global.js",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -14,6 +23,21 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "ens",
+    "ethereum",
+    "auto-resolve",
+    "dom",
+    "addresses",
+    "web"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schmidsi/ens-rush-resolution.git",
+    "directory": "packages/auto-resolve"
+  },
+  "license": "MIT",
+  "author": "Simon Emanuel Schmid <simon@schmid.io>",
   "dependencies": {
     "@ens-rush-resolution/core": "workspace:*"
   },

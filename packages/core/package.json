@@ -2,10 +2,17 @@
   "name": "@ens-rush-resolution/core",
   "version": "0.1.0",
   "description": "Core ENS resolution functionality for Rush Resolution",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -14,6 +21,20 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "ens",
+    "ethereum",
+    "resolution",
+    "batch",
+    "api"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schmidsi/ens-rush-resolution.git",
+    "directory": "packages/core"
+  },
+  "license": "MIT",
+  "author": "Simon Emanuel Schmid <simon@schmid.io>",
   "devDependencies": {
     "@types/bun": "latest",
     "tsup": "^8.5.0"
