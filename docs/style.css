@@ -160,11 +160,30 @@ h2 {
 
 .demo-note {
     text-align: center;
-    background: #e3f2fd;
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.1) 0%, rgba(102, 126, 234, 0.1) 100%);
     padding: 1.5em;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-top: 2em;
-    border-left: 4px solid #2196f3;
+    border: 1px solid rgba(33, 150, 243, 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.refresh-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+}
+
+.refresh-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
 }
 
 /* Features */
